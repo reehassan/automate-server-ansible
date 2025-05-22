@@ -1,0 +1,41 @@
+# Terraform specific
+*.tfstate
+*.tfstate.*
+.terraform/
+crash.log
+terraform.tfvars         # Only if not using GitHub Secrets or encryption
+*.backup
+*.log
+
+# Ansible specific
+*.retry
+*.log
+
+# SSH keys (NEVER commit keys)
+*.pem
+*.pub
+id_rsa
+id_rsa.pub
+.ssh/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Python virtualenv (if used)
+venv/
+__pycache__/
+*.pyc
+
+# Editor/IDE configs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# GitHub Actions cache (optional)
+.github/workflows/*.cache
+
+# Other OS-generated files
+*.bak
+*~
