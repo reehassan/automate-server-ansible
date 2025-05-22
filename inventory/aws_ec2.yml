@@ -1,4 +1,5 @@
-plugin: aws_ec2
+# inventory/aws_ec2.yml
+plugin: amazon.aws.aws_ec2
 regions:
   - eu-north-1
 host_key_checks: False
@@ -7,4 +8,4 @@ keyed_groups:
     prefix: ansible_server
     separator: _
 compose:
-  ansible_host: public_ip_address  # <-- This is the fix!
+  ansible_host: public_ip_address
