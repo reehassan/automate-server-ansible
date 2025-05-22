@@ -1,41 +1,57 @@
-# Terraform specific
-*.tfstate
-*.tfstate.*
-.terraform/
-crash.log
-terraform.tfvars         # Only if not using GitHub Secrets or encryption
-*.backup
+# === General ===
 *.log
-
-# Ansible specific
-*.retry
-*.log
-
-# SSH keys (NEVER commit keys)
-*.pem
-*.pub
-id_rsa
-id_rsa.pub
-.ssh/
-
-# System files
+*.tmp
+*.bak
+*.swp
+*.swo
 .DS_Store
 Thumbs.db
 
-# Python virtualenv (if used)
-venv/
+# === Python (if using) ===
 __pycache__/
 *.pyc
 
-# Editor/IDE configs
+# === VSCode/JetBrains/Editor ===
 .vscode/
 .idea/
-*.swp
-*.swo
 
-# GitHub Actions cache (optional)
-.github/workflows/*.cache
+# === Ansible ===
+*.retry
+*.tar.gz
+*.zip
+vault_pass.txt   # If you store Ansible Vault password in plaintext (not recommended)
 
-# Other OS-generated files
-*.bak
+# === Terraform ===
+*.tfstate
+*.tfstate.backup
+.terraform/
+terraform.tfvars
+terraform.tfvars.json
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# === Git itself (already ignored by default, but safe to list) ===
+.git/
+
+# === Secrets (Always make sure no hardcoded secrets!) ===
+secrets.yml
+private_key.pem
+*.key
+*.pem
+*.crt
+
+# === OS Specific ===
+# macOS
+.AppleDouble
+.LSOverride
+Icon?
+
+# Linux
 *~
+
+# Windows
+ehthumbs.db
+Desktop.ini
