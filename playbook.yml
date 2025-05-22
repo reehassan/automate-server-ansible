@@ -1,0 +1,20 @@
+---
+- name: Provision and configure production-ready web servers
+  hosts: all                 # target all hosts in your inventory
+  become: true               # use sudo
+
+  roles:
+    - role: common
+      tags: ["update"]
+
+    - role: user
+      tags: ["user"]
+
+    - role: ufw
+      tags: ["firewall"]
+
+    - role: docker
+      tags: ["docker"]
+
+    - role: nginx
+      tags: ["nginx"]
