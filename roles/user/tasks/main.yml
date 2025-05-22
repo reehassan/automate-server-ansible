@@ -1,0 +1,17 @@
+---
+- name: Create a new user 'deploy' with sudo privileges
+  user:
+    name: deploy
+    shell: /bin/bash
+    groups: sudo
+    append: yes
+    state: present
+
+- name: Allow 'deploy' user to have passwordless sudo (Debian/Ubuntu)
+  copy:
+    dest: /etc/sudoers.d/deploy
+    content: "deploy ALL=(ALL) NOPASSWD:ALL\n"
+    owner: root
+    group: root
+    mode: '0440'
+  when: ansible_os_family == "Debian"
