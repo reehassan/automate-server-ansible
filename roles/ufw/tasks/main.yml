@@ -1,0 +1,25 @@
+---
+- name: Install UFW firewall (Debian/Ubuntu)
+  apt:
+    name: ufw
+    state: present
+  when: ansible_os_family == "Debian"
+
+- name: Allow SSH connections in UFW
+  ufw:
+    rule: allow
+    name: OpenSSH
+
+- name: Allow HTTP and HTTPS in UFW
+  ufw:
+    rule: allow
+    port: "{{ item }}"
+    proto: tcp
+  loop:
+    - 80
+    - 443
+
+- name: Enable UFW firewall
+  ufw:
+    state: enabled
+    logging: on
