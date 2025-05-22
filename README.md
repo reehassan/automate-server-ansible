@@ -1,4 +1,3 @@
-````markdown
 # 🚀 Automate Server Setup with Ansible
 
 This project automates the setup of production-ready web servers using **Ansible playbooks**. It configures **Nginx**, **UFW (Uncomplicated Firewall)**, and **Docker** on multiple servers or local VMs. **Terraform** is included to provision AWS infrastructure (e.g., EC2 instances), enabling a complete Infrastructure-as-Code (IaC) workflow.
@@ -50,7 +49,6 @@ Make sure the following tools are installed:
   ```bash
   export AWS_ACCESS_KEY_ID="your-access-key"
   export AWS_SECRET_ACCESS_KEY="your-secret-key"
-````
 
 * **Python 3**
 * **Git**
