@@ -224,10 +224,3 @@ Follow the project’s style and include tests where appropriate.
 ## 📜 License
 
 This project is licensed under the [MIT License](./LICENSE).
-
-```
-
----
-
-Let me know if you want badges, diagrams, or if you’d like this saved as a downloadable file.
-```
